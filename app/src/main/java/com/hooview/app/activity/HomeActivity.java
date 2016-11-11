@@ -1,7 +1,9 @@
-package com.hooview.app;
+package com.hooview.app.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.hooview.app.R;
 
 public class HomeActivity extends AppCompatActivity {
 
