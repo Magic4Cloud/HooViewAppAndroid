@@ -1,20 +1,20 @@
 package com.hooview.app.base;
 
-
-import android.support.v4.app.Fragment;
 import android.view.View;
 import android.widget.RelativeLayout;
 
 import com.hooview.app.R;
+import com.hooview.app.utils.PicassoUtil;
 
 import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
- * Created by yinyongliang on 16/11/14.
- * Fragment的基类
+ * Created by yinyongliang on 16/11/15.
+ * 网络加载state判断的基类
  */
-public abstract class BaseFragment extends Fragment {
+public abstract class BaseStateActivity extends BaseActivity {
+
 
     @BindView(R.id.empty_layout)
     RelativeLayout mEmptyLayout;
@@ -23,10 +23,25 @@ public abstract class BaseFragment extends Fragment {
     @BindView(R.id.loading_layout)
     RelativeLayout mLoadingView;
 
-    //当前fragment是否可用
-    public boolean isFragmentActive() {
-        return getActivity() != null && !isDetached() && isAdded();
+    @Override
+    protected void onResume() {
+        super.onResume();
+        PicassoUtil.resume(this);
     }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        PicassoUtil.pause(this);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        PicassoUtil.cancel(this);
+        overridePendingTransition(R.anim.hold, R.anim.pannel_left_out);
+    }
+
 
     //正在加载的页面
     public void showLoadingView() {

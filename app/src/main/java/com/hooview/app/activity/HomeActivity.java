@@ -6,12 +6,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.RadioButton;
 
 import com.hooview.app.R;
+import com.hooview.app.base.BaseActivity;
 import com.hooview.app.net.RetroHelper;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class HomeActivity extends AppCompatActivity {
+/**
+ * 首页activity
+ */
+public class HomeActivity extends BaseActivity {
 
     @BindView(R.id.mViewPager)
     ViewPager mViewPager;
@@ -27,16 +31,5 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         ButterKnife.bind(this);
-        RetroHelper.name(this);
-
-        //initData();
-
-//        mRadioHome.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Toast.makeText(HomeActivity.this, "home", Toast.LENGTH_SHORT).show();
-//            }
-//        });
     }
-
 }
