@@ -14,4 +14,12 @@
         <attr name="contentSize" format="dimension" />
         <attr name="contentColor" format="color" />
     </declare-styleable>
+
+    <declare-styleable name="TopBar">
+        <attr name="top_background" format="color"/>
+        <attr name="top_height" format="dimension"/>
+        <attr name="center_text_color" format="color"/>
+        <attr name="center_text_size" format="dimension"/>
+
+    </declare-styleable>
 </resources>

@@ -1,4 +1,4 @@
-package com.hooview.app.bean;
+package com.hooview.app.model;
 
 /**
  * Author:   yyl
