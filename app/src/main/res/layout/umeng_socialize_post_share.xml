@@ -5,6 +5,7 @@
     android:layout_height="fill_parent"
     android:background="#D8DDE4" >
 
+    
     <include
         android:id="@+id/umeng_socialize_share_titlebar"
         layout="@layout/umeng_socialize_titile_bar" />
