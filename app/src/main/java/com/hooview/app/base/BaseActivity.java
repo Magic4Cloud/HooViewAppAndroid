@@ -5,6 +5,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
+
 import com.hooview.app.R;
 import com.hooview.app.utils.PicassoUtil;
 
@@ -17,6 +18,9 @@ import butterknife.OnClick;
  * 底层基类
  */
 public class BaseActivity extends AppCompatActivity {
+
+
+    public String TAG = getClass().getSimpleName();
 
     private Toolbar mToolbar;
 

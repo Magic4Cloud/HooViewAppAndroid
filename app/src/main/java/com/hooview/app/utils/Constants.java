@@ -30,4 +30,7 @@ public class Constants {
     public static final String EV_SECRET_ID = "S6HQDY9M4LKnaosPrR7CZWQnsEvFgHWy";
 
 
+    public static final String BASE_URL = "https://api.github.com/";
+
+
 }

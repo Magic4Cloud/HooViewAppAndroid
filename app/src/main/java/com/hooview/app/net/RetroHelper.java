@@ -30,39 +30,29 @@ public class RetroHelper {
     public static void name(final Context context) {
 
 
-         OkHttpClient client = new OkHttpClient.Builder().addInterceptor(new Interceptor() {
-            @Override
-            public okhttp3.Response intercept(Chain chain) throws IOException {
-                Request request = chain.request();
-                okhttp3.Response response = chain.proceed(request);
-                long resq_length = request.body().contentLength();
-                long resp_length = response.body().contentLength();
-                return null;
-            }
-        }).build();
 
         Retrofit retrofit = new Retrofit.Builder().baseUrl("https://api.github.com/").
                 addConverterFactory(GsonConverterFactory.create()).
-                client(client).
                 build();
 
         GithubUserInfo info = retrofit.create(GithubUserInfo.class);
 
         //请求
         Call<User> userCall = info.getUserInfo("yinyongliang");
-        userCall.enqueue(new Callback<User>() {
-            @Override
-            public void onResponse(Call<User> call, Response<User> response) {
-                Toast.makeText(context, response.body().getName(), Toast.LENGTH_SHORT).show();
 
-                return;
-            }
 
-            @Override
-            public void onFailure(Call<User> call, Throwable t) {
-
-            }
-        });
+//        AppRequest.getInstance(context).requestData(new WrapCallBack<ResponseEntity>() {
+//            @Override
+//            public void onSuccees(ResponseEntity response) {
+//
+//            }
+//
+//            @Override
+//            public void onFailure(Throwable t) {
+//
+//            }
+//        },AppRequest.getInstance(context).create(ApiConstants.class).getUsers("user"));
     }
+
 
 }

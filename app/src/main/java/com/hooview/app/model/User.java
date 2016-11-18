@@ -1,11 +1,13 @@
 package com.hooview.app.model;
 
+import com.hooview.app.net.ResponseEntity;
+
 /**
  * Author:   yyl
  * Description:
  * CreateDate:     2016/11/11
  */
-public class User {
+public class User extends ResponseEntity{
 
     private String login;
 
