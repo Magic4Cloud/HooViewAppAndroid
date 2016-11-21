@@ -28,7 +28,7 @@ public class MyApplication extends Application {
         mAppContext = getApplicationContext();
     }
 
-    public static Context  getAppContext() {
+    public static Context getAppContext() {
         return mAppContext;
     }
 }
