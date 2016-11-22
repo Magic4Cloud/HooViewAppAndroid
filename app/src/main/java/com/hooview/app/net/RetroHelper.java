@@ -1,18 +1,11 @@
 package com.hooview.app.net;
 
 import android.content.Context;
-import android.widget.Toast;
 
+import com.hooview.app.model.ResponseEntity;
 import com.hooview.app.model.User;
 
-import java.io.IOException;
-
-import okhttp3.Interceptor;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
 import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -23,13 +16,12 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public class RetroHelper {
 
+    private Context context;
 
 
+    public void name(final Context context) {
 
-
-    public static void name(final Context context) {
-
-
+        this.context = context;
 
         Retrofit retrofit = new Retrofit.Builder().baseUrl("https://api.github.com/").
                 addConverterFactory(GsonConverterFactory.create()).
@@ -41,18 +33,19 @@ public class RetroHelper {
         Call<User> userCall = info.getUserInfo("yinyongliang");
 
 
-//        AppRequest.getInstance(context).requestData(new WrapCallBack<ResponseEntity>() {
-//            @Override
-//            public void onSuccees(ResponseEntity response) {
-//
-//            }
-//
-//            @Override
-//            public void onFailure(Throwable t) {
-//
-//            }
-//        },AppRequest.getInstance(context).create(ApiConstants.class).getUsers("user"));
     }
 
+    private void get() {
+        HttpUtils.asynRequest("tag", HttpUtils.getmInstance(context).getUserInfo("yyl"), new WrapCallBack<User>() {
+            @Override
+            public void onSuccees(User response) {
 
+            }
+
+            @Override
+            public void onFailure(Throwable t) {
+
+            }
+        });
+    }
 }

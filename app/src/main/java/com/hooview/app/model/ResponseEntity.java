@@ -1,4 +1,4 @@
-package com.hooview.app.net;
+package com.hooview.app.model;
 
 /**
  * Created by yinyongliang on 16/11/17.

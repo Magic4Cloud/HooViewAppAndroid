@@ -1,7 +1,5 @@
 package com.hooview.app.model;
 
-import com.hooview.app.net.ResponseEntity;
-
 /**
  * Author:   yyl
  * Description:

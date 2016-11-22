@@ -3,6 +3,7 @@ package com.hooview.app.application;
 import android.app.Application;
 import android.content.Context;
 
+import com.hooview.app.net.HttpUtils;
 import com.umeng.socialize.PlatformConfig;
 import com.umeng.socialize.UMShareAPI;
 
@@ -24,8 +25,11 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        UMShareAPI.get(this);
         mAppContext = getApplicationContext();
+        //友盟
+        UMShareAPI.get(this);
+        //retrofit初始化
+        HttpUtils.initRetrofit();
     }
 
     public static Context getAppContext() {

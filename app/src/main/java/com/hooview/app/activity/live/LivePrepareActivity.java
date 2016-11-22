@@ -1,6 +1,5 @@
 package com.hooview.app.activity.live;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.hooview.app.R;

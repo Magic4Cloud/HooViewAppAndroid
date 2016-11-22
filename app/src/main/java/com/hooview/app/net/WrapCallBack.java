@@ -1,5 +1,7 @@
 package com.hooview.app.net;
 
+import com.hooview.app.model.ResponseEntity;
+
 import java.net.ConnectException;
 import java.net.SocketTimeoutException;
 
